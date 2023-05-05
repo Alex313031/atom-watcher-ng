@@ -1,7 +1,7 @@
 {
   "name": "@atom/watcher",
-  "version": "1.3.4-0",
-  "description": "Atom filesystem watcher",
+  "version": "1.3.5",
+  "description": "Atom-ng Experimental filesystem watcher",
   "main": "lib/index.js",
   "bin": "lib/cli.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "format:cpp": "script/c++-format",
     "format:js": "standard --fix",
     "build:debug": "node --harmony script/helper/gen-compilation-db.js rebuild --debug",
-    "build:atom": "electron-rebuild --version 6.1.12",
+    "build:atom": "electron-rebuild --version 13.6.9",
     "test": "mocha",
     "test:lldb": "lldb -- node --harmony ./node_modules/.bin/_mocha --require test/global.js --require mocha-stress --recursive",
     "test:gdb": "gdb --args node --harmony ./node_modules/.bin/_mocha --require test/global.js --require mocha-stress --recursive",
@@ -24,13 +24,15 @@
     "ci:travis": "npm run test -- --fgrep '^linux' --invert --reporter list",
     "aw:test": "npm run clean:fixture && clear && npm run build:debug && clear && npm run test",
     "aw:win": "npm run clean:fixture && cls && npm run build:debug && cls && npm run test",
-    "clean:fixture": "git clean -xfd test/fixture"
+    "clean:fixture": "git clean -xfd test/fixture",
+    "clean": "rimraf build prebuilds bin && rimraf node_modules",
+    "distclean": "rimraf build prebuilds bin"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/watcher.git"
+    "url": "https://github.com/Alex313031/atom-watcher-ng.git"
   },
-  "bugs": "https://github.com/atom/watcher/issues",
+  "bugs": "https://github.com/Alex313031/atom-watcher-ng/issues",
   "keywords": [
     "filewatch",
     "watcher",
@@ -44,7 +46,7 @@
   "devDependencies": {
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
-    "electron-rebuild": "1.11.0",
+    "electron-rebuild": "3.2.9",
     "eslint-plugin-import": "2.16.0",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-react": "7.12.4",
@@ -53,16 +55,17 @@
     "mocha-junit-reporter": "1.18.0",
     "mocha-stress": "1.0.0",
     "prebuild": "8.2.1",
+    "rimraf": "2.7.1",
     "shell-quote": "1.6.1",
     "standard": "12.0.1",
-    "temp": "0.9.0",
+    "temp": "0.9.4",
     "test-until": "1.1.1"
   },
   "dependencies": {
     "event-kit": "2.5.3",
-    "fs-extra": "7.0.1",
-    "nan": "2.14.1",
-    "prebuild-install": "5.3.3"
+    "fs-extra": "9.1.0",
+    "nan": "2.14.2",
+    "prebuild-install": "6.1.4"
   },
   "standard": {
     "globals": [

@@ -17,7 +17,7 @@
 class Cookie
 {
 public:
-  Cookie(ChannelID channel_id, std::string &&from_path, EntryKind kind);
+  Cookie(ChannelID channel_id, std::string &&from_path, EntryKind kind) noexcept;
   Cookie(Cookie &&other) noexcept;
   ~Cookie() = default;
 
