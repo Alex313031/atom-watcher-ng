@@ -15,7 +15,7 @@
     "format:cpp": "script/c++-format",
     "format:js": "standard --fix",
     "build:debug": "node --harmony script/helper/gen-compilation-db.js rebuild --debug",
-    "build:atom": "electron-rebuild --version 13.6.9",
+    "build:atom": "electron-rebuild --version 12.2.3",
     "test": "mocha",
     "test:lldb": "lldb -- node --harmony ./node_modules/.bin/_mocha --require test/global.js --require mocha-stress --recursive",
     "test:gdb": "gdb --args node --harmony ./node_modules/.bin/_mocha --require test/global.js --require mocha-stress --recursive",
@@ -46,7 +46,7 @@
   "devDependencies": {
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
-    "electron-rebuild": "3.2.9",
+    "electron-rebuild": "2.3.5",
     "eslint-plugin-import": "2.16.0",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-react": "7.12.4",
@@ -66,7 +66,7 @@
     "event-kit": "2.5.3",
     "fs-extra": "9.1.0",
     "nan": "2.14.2",
-    "prebuild-install": "6.1.4"
+    "prebuild-install": "5.3.6"
   },
   "standard": {
     "globals": [
