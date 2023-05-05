@@ -54,6 +54,7 @@
     "mocha-appveyor-reporter": "0.4.2",
     "mocha-junit-reporter": "1.18.0",
     "mocha-stress": "1.0.0",
+    "node-gyp": "8.4.1",
     "prebuild": "8.2.1",
     "rimraf": "2.7.1",
     "shell-quote": "1.6.1",
